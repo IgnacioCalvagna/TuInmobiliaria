@@ -1,0 +1,33 @@
+{
+"Properties":[
+    {
+        "adress":"Sta Maria De Oro",
+        "categoryId":1,
+        "locatioId":1,
+        "description":"3 hambs, suit matrimonial, luminuso, amplio balcon cerrado.",
+        "price": 1000000,
+        "available":true,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9jkoU6FVEgVSIIMsPvPWHdsyi5j_S2dCU8Q&usqp=CAUhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9jkoU6FVEgVSIIMsPvPWHdsyi5j_S2dCU8Q&usqp=CAU"
+
+    },
+    {
+        "adress":"Honduras 123",
+        "categoryId":2,
+        "locatioId":2,
+        "description":"Tres hambs., amplio y luminuso, cuenta con jardín de invierno y terraza con parrilla.",
+        "price": 1000000,
+        "available":true,
+        "img":""
+
+    },
+    {
+        "adress":"San Martín 789",
+        "categoryId":3,
+        "locatioId":3,
+        "description":"5 hambs., 3 baños,cocina espaciosa, jardín soleado, a estrenar.",
+        "price": 1000000,
+        "available":true,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9eYPeNP9GU9Ok9RrMUShfjLSf_oD1XMZhXQ&usqp=CAU"
+    }
+]
+}
