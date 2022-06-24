@@ -1,6 +1,6 @@
 const Property = require("../models/Property");
 const { Op } = require("sequelize");
-const { Category } = require("../models");
+const { Category, User } = require("../models");
 const { Location } = require("../models");
 
 exports.getAllProperty = (req, res) => {
@@ -9,9 +9,10 @@ exports.getAllProperty = (req, res) => {
   });
 };
 exports.getByLowerPrice = (req, res) => {
-  Property.findAll({ include: [Location] }).then((properties) => { properties.sort((a, b) => {
-   return a.price - b.price
-  });
+  Property.findAll({ include: [Location] }).then((properties) => {
+    properties.sort((a, b) => {
+      return a.price - b.price;
+    });
     res.send(properties);
   });
 };
@@ -20,6 +21,13 @@ exports.getById = (req, res) => {
   console.log("el params", req.params.id);
   const { id } = req.params;
   Property.findOne({ where: { id } }).then((product) => res.send(product));
+};
+
+exports.putEditById = (req, res) => {
+  const { id } = req.params;
+  Property.update(req.body, { where: { id }, returning: true }).then(
+    (property) => res.send(property)
+  );
 };
 
 exports.getByLocation = (req, res) => {
@@ -83,9 +91,9 @@ exports.update = (req, res) => {
   });
 };
 
-exports.delete = (req, res) => {
+exports.deleteById = (req, res) => {
   const { id } = req.params;
-  Property.destroy({ where: { id } }).then((data) => res.sendStatus(202));
+  Property.destroy({ where: { id } }).then(() => res.sendStatus(202));
 };
 
 exports.getByCategory = (req, res) => {
@@ -114,3 +122,11 @@ exports.addPropertyCategory = (req, res) => {
     });
   });
 };
+exports.putAddToFavorite = (req, res) => {
+ /*  const { id, userId } = req.body;
+  console.log("es el ID", id)
+  console.log("es el user ID", userId) */
+  res.send("las pelotas llenas")
+ 
+};
+

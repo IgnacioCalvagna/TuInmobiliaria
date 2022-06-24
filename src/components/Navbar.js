@@ -99,25 +99,33 @@ export default function WithSubnavigation() {
                 {/* MenuItems are not rendered unless Menu is open */}
                <Link to="/form">
                 <MenuItem as={"a"}>
+                  Agregar Propiedades
+                </MenuItem>
+                </Link>
+                <Link to="/admin/property">
+                <MenuItem as={"a"}>
                   Modificar Propiedades
                 </MenuItem>
                 </Link>
-               
               </MenuList>
             </Menu>
            ) : (
             <></>
           )} 
-          <Button
+          {user.id ? <Menu>
+            <MenuButton>Favoritos</MenuButton>
+          </Menu> :
+          <><Button
             as={"a"}
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
             href={"/login"}
           >
+            
             Sign In
           </Button>
-
+        
           <Button
             as={"a"}
             display={{ base: "none", md: "inline-flex" }}
@@ -131,7 +139,8 @@ export default function WithSubnavigation() {
             }}
           >
             Sign Up
-          </Button>
+          </Button></>
+         }
         </Stack>
       </Flex>
 

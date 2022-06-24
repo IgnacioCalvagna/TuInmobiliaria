@@ -1,13 +1,13 @@
 const Location = require('../models/Location');
 const { Op } = require("sequelize");
 const Property = require("../models/Property");
-/* exports.newLocation = (req, res) => {
+exports.newLocation = (req, res) => {
     const { name } = req.body;
     Location.create({
         name
     }).then(location =>  res.send(location))
     .catch(error => console.log(error))
-}; */
+}; 
 
 /*  exports.getByName = (req, res) => {
      const { name } = req.params;

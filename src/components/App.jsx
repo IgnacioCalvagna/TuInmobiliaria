@@ -18,14 +18,16 @@ import AdminProperty from "./AdminProperty";
 
 function App() {
 
+  const user = useSelector(state => state.user);
+
 useEffect(() => {
+  console.log("user", user)
   localStorage.setItem("storage","Cualquier cosa");
   //localStorage.getItem("storage");
 }, []);
  
-  /* const dispatch = useDispatch();
-  const user = useSelector(state => state.user);
-
+  // const dispatch = useDispatch();
+/* 
   useEffect(() => {
     dispatch(persistUser());
   }, []);
@@ -33,8 +35,8 @@ useEffect(() => {
   useEffect(() => {
     axios.get('/api/property/').then(res => setProducts(res.data));
   }, []);
-*/
 
+ */
   return (
     <div className="App">
       <Navbar />
@@ -45,9 +47,9 @@ useEffect(() => {
           element={
             <>
               <Home />
-              <div> 
+             { user.id ? <div> 
                 <GridProperty property="property" />
-              </div>
+              </div> : null}
             </>
           }
         />

@@ -17,10 +17,10 @@ Property.init(
     description: {
       type: DataTypes.TEXT,
       allowNull: false,
-      get:function () {
+     /*  get:function () {
         const truncateDescription = this.getDataValue("description");
         return truncateDescription.substring(0,20) +"...";
-      },
+      }, */
     },
     price: {
       type: DataTypes.INTEGER,
